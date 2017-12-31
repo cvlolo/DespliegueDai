@@ -1,5 +1,5 @@
 FROM ubuntu:16.04
-MAINTAINER Manuel Casado Vergara
+MAINTAINER Manuel Casado 
 
 
 RUN apt-get update
