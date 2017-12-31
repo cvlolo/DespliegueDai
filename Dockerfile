@@ -29,9 +29,10 @@ RUN ln -s /etc/nginx/sites-available/flask.conf /etc/nginx/sites-enabled/flask.c
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 
 
-RUN mkdir -p /var/log/supervisor
+
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-COPY gun.conf /etc/supervisor/conf.d/gunicorn.conf
 
 EXPOSE 80
-CMD ["/usr/bin/supervisord"]
+CMD ["sudo supervisorctl reread"]
+CMD ["sudo supervisorctl update"]
+CMD ["ssudo supervisorctl start flaskdeploy"]
