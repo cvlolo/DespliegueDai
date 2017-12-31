@@ -33,6 +33,6 @@ RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 EXPOSE 80
-CMD ["sudo supervisorctl reread"]
-CMD ["sudo supervisorctl update"]
-CMD ["sudo supervisorctl start flaskdeploy"]
+CMD sudo supervisorctl reread
+CMD sudo supervisorctl update
+CMD sudo supervisorctl start flaskdeploy
