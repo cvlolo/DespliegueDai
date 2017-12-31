@@ -31,7 +31,7 @@ RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 
 RUN mkdir -p /var/log/supervisor
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-COPY guni.conf /etc/supervisor/conf.d/gunicorn.conf
+COPY gun.conf /etc/supervisor/conf.d/gunicorn.conf
 
 EXPOSE 80
 CMD ["/usr/bin/supervisord"]
