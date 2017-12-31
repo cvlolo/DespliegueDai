@@ -35,4 +35,4 @@ COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 EXPOSE 80
 CMD ["sudo supervisorctl reread"]
 CMD ["sudo supervisorctl update"]
-CMD ["ssudo supervisorctl start flaskdeploy"]
+CMD ["sudo supervisorctl start flaskdeploy"]
