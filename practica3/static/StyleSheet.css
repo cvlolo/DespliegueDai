@@ -1,0 +1,328 @@
+body{
+    
+  margin: 0 auto;   
+    
+}
+
+header {
+   background-color: darkred;
+   overflow:auto;
+}
+header #header_izquierdo {
+  float:left;
+  color: white;
+  padding-left: 40px;
+  padding-top:10px;
+
+}
+
+header #header_derecho {
+  padding-top: 30px;
+  float:right;
+  width: 400px;
+  height: 80px;
+  color:white;
+  padding-right:100px;
+}
+
+
+
+
+nav {
+  background-color: #F2F2F2;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  float:left;
+
+}
+nav ul {
+  font-family: sans-serif;
+  list-style: none;
+
+
+
+}
+nav ul li {
+
+  font-size: 16px;
+ padding-bottom:20px;
+
+}
+
+
+nav ul li a {
+  color: darkslategrey;
+  padding: 15px;
+  text-decoration: none;
+
+
+}
+
+
+
+
+div #bloque{
+
+float:left;
+padding-left:20px;
+}
+
+body{
+    background-color: #FAFAFA;
+}
+
+article div#parte_derecha{
+    
+   float:right; 
+    
+}
+article div#parte_izquierda h1{
+    padding-top: 10px;
+    font-family: sans-serif;
+    font-weight: lighter;
+    font-size: 40px;
+    color:#848484;
+    
+}
+article div#parte_izquierda {
+     padding-left: 90px;   
+     color:#848484;
+}
+
+article section {
+    padding-top:40px;
+}
+
+article section h3{
+    color:darkred;
+    padding-left:220px;
+}
+article section p{
+    padding-left:220px;
+}
+
+article section img{
+    width:200px;
+    height:200px;
+    float:left;
+}
+article section  ul{
+    list-style: none;
+}
+article section ul li:before{
+    
+    content: "› ";
+    color:black;
+    font-size: 20px;
+}
+article section ul li a{
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+}
+article section ul#left {
+    float:left;
+}
+article section ul#right  {
+    padding-top:20px;
+    padding-left:500px;
+}
+article section ul#solo  {
+    padding-top:20px;
+    padding-left:230px;
+}
+
+article div#parte_derecha aside#asideArriba{
+background-color: #F2F2F2;    
+font-family: sans-serif;
+padding-top: 20px;
+}
+
+article div#parte_derecha aside#asideArriba h3{
+padding-left: 40px;
+color: darkred;
+}
+article div#parte_derecha aside#asideArriba p{
+padding-left: 40px;
+color:#848484;
+}
+article div#parte_derecha aside#asideArriba ol li {
+    
+list-style:none;
+color:#848484;
+}
+article div#parte_derecha aside#asideArriba ol li ul li{
+    
+list-style:square;
+}
+
+article div#parte_derecha aside#asideArriba div#aprender{
+    padding-left:500px;
+}
+article div#parte_derecha aside#asideArriba div#aprender a{
+    text-decoration:none;
+    color:#424242;
+}
+article div#parte_derecha aside#asideArriba div#aprender img{
+    height:20px;
+    width: 20px;
+}
+article div#parte_derecha aside#asideAbajo img{
+    
+    padding-left:40px;
+}
+
+
+article div#parte_derecha aside#asideAbajo img{
+    
+    float:left;
+    padding-top:20px;
+}
+article div#parte_derecha aside#asideAbajo div#asideTexto{
+    font-family:sans-serif;
+    padding-left:110px;
+}
+
+article div#parte_derecha aside#asideAbajo div#asideTexto h3{
+    color: darkred;
+}
+article div#parte_derecha aside#asideAbajo div#asideTexto a{
+    text-decoration:none;
+    color: #000000;
+}
+article div#parte_derecha aside#asideAbajo div#asideTexto p{
+    color: #424242;
+}
+
+
+div#ZonaInferior{
+    clear:both;
+    overflow:auto;
+    padding-top:40px;
+    padding-left:100px;
+    background-color: #F2F2F2;
+    font-family:sans-serif;
+}
+
+
+div#ZonaInferior div#izquierda  {
+float:left;
+
+}
+
+div#ZonaInferior div#izquierda h5 {
+color:darkred;
+padding-left:40px;
+padding-top:5px;
+}
+div#ZonaInferior div#izquierda ul li{
+    list-style:none;
+}
+div#ZonaInferior div#izquierda ul li a{
+    text-decoration:none;
+    color:#848484
+}
+
+div#ZonaInferior div#izquierda div#prim {
+float:left;
+
+}
+div#ZonaInferior div#izquierda div#sec {
+float:left;
+padding-left:20px;
+}
+div#ZonaInferior div#izquierda div#terc {
+float:left;
+padding-left:20px;
+
+}
+
+div#ZonaInferior div#izquierda div#cuarto {
+float:left;
+padding-left:20px;
+
+}
+div#ZonaInferior div#izquierda div#quinto {
+float:left;
+padding-left:20px;
+
+}
+
+div#ZonaInferior div#derecha  {
+float:right;
+    padding-right:400px;
+
+
+}
+
+div#ZonaInferior div#derecha ul li {
+
+  list-style: none;
+}
+
+div#ZonaInferior div#derecha .button {
+  background-color: #A79782;
+    border: none;
+    color: white;
+    height:20px;
+    width:100px;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+footer{
+clear:both;
+overflow:auto;
+background-color: darkred;
+color:white;
+    height: 100px;
+padding-left:20px;
+height:120px;
+    
+}
+
+footer div#footIz{
+    float:left;
+}
+footer div#footIz h4{
+    padding-top:20px;
+    padding-left:50px;
+    color:white;
+    float:left;
+}
+
+footer div#footDer ul {
+    float:left;
+}
+footer div#footDer ul li{
+    list-style:none;
+    float:left;
+}
+
+footer div#footDer ul li{
+    list-style:none;
+    float:left;
+}
+
+footer div#footDer ul li a{
+    text-decoration:none;
+    padding: 15px;
+    color:white;
+}
+
+footer div#footDer p {
+    padding-top:60px;
+    padding-left:300px;
+}

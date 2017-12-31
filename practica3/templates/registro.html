@@ -1,0 +1,16 @@
+{% extends "padre.html" %}
+
+
+{% block mibloque %}<form action="/registro" method="post">
+			<label>Email</label>
+			<input type="email" name="miembro"> <br>
+			<label>Contraseña</label>
+			<input type="password" name="pass"> <br>
+			<label>telefono</label>
+			<input type="text" name="tel"> <br>
+			<input type="submit" name="reg" value="Registrarse"> <br>
+			</form>
+
+
+{% endblock %}
+

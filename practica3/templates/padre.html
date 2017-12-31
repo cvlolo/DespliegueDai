@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Prueba Templates</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/static/booatstrap.min.css">
+  <link rel="stylesheet" href="/static/boo18tstrap.css">
+  <script src="/static/jqueery.min.js"></script>
+  <script src="/static/boootstrap.min.js"></script>
+  <script src="/static/letran.js"></script>
+</head>
+
+<body>
+
+<header class="header-fixed">
+
+	<div class="header-limiter">
+
+		<h1>Prueba Jinga</h1>
+
+		<div class="header-log">
+			{% if session['miembro'] %}
+			<h1>Hola {{session['miembro']}}</h1>
+			<a href="/logout">Logout</a> <br> 
+
+		{% else %}
+			<form action="/login" method="post">
+			<label>Email</label>
+			<input type="text" name="miembro" style="color:black;"> <br>
+			<label>Contraseña</label>
+			<input type="password" name="pass" style="color:black;"> <br>
+			<input type="submit" name="login" value="Login" style="color:black;"> <br>
+			</form>
+		{% endif %}
+		</div>
+
+	</div>
+
+</header>
+
+<div class="header-fixed-placeholder"></div>
+
+	
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Barra de navegacion</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+	<li class="activo"><a href="/">Padre</a></li>
+         <li><a href="/hijo">Hijo</a></li>
+	<li><a href="/hijo2">Hijo2</a></li>
+	<li><a href="/hijo3">Hijo3</a></li>
+	<li><a href="/buscar">Buscar Restaurante</a></li>
+	{% if session['miembro'] %}
+			
+		      	<li><a href={{session['urls'][2]}}>Última Página Visitada</a></li>
+		      	<li><a href={{session['urls'][1]}}>Penúltima Página Visitada</a></li>
+		      	<li><a href={{session['urls'][0]}}>Antepenúltima Página Visitada</a></li>
+			<li><a href="/editar">Editar Datos</a></li>
+		      <li><a href="/ver">Ver datos de Usuario</a></li>
+			{% endif %}
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/registro"> Registro </a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+	<div id="cuerpo">
+	
+
+	
+
+	<div id="bloque">
+	{% block mibloque %}<h1>Soy el padre</h1>
+	
+	
+
+	{% endblock %}
+	<button>Click para cambiar tamanio de letra</button><br><br>
+
+	
+			<a class="aumFuente" href="#">Aumentar</a> <br>
+			<a class="disFuente" href="#">Disminuir</a> <br>
+			<a class="reiFuente" href="#">Reiniciar</a> <br>
+	</div>
+
+		</div>
+
+
+<footer class="footer-distributed">
+
+			<div class="footer-right">
+
+				<a href="#">Inicio</a>
+				<a href="#">Contacto</a>
+
+
+
+				
+
+			</div>
+
+			<div class="footer-left">
+
+				<p class="footer-links">
+					©Universidad de Granada. Cuesta del Hospicio S/N 18071. Granada. SPAIN.
+				</p>
+
+			</div>
+
+		</footer>
+
+		
+
+
+</body>
+</html>
+

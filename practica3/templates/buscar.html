@@ -1,0 +1,50 @@
+{% extends "padre.html" %}
+
+
+{% block mibloque %}<form action="/buscar" method="post">
+			<label>Cocina</label>
+			<input type="text" name="cocina"> <br>
+			<input type="submit" name="reg" value="Buscar"> <br>
+			</form>
+{{ NotFound }}
+<div id="cambio">
+{% for item in Nombre  %}
+
+ Nombre:  {{ item }} <br>
+
+{% endfor %}
+
+
+                    
+
+</div>
+<input type="submit" value="Sig" id="Sig" >
+       <input type="submit" value="Ant" id="Ant" >
+<script>
+
+   $('#Sig').click(function() {
+     $.get('/get_sig',                // url
+            {pag:'mas'},         // datos
+            function (data) {          // callback
+               $('#cambio').text(data.s);
+            }
+         );
+      });
+
+$('#Ant').click(function() {
+     $.get('/get_sig',                // url
+            {pag:'menos'},         // datos
+            function (data) {          // callback
+               $('#cambio').text(data.s);
+            }
+         );
+      });
+
+
+       
+    </script>
+
+{% endblock %}
+
+
+
