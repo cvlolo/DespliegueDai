@@ -21,7 +21,7 @@ COPY practica3 /deploy/practica3
 RUN pip install -r /deploy/practica3/requirements.txt
 
 RUN mkdir -p /var/www/flask/static
-COPY /deploy/practica3/static /var/www/flask/static
+COPY /practica3/static /var/www/flask/static
 
 RUN rm /etc/nginx/sites-enabled/default
 COPY flask.conf /etc/nginx/sites-available/
