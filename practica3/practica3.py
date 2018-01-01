@@ -45,10 +45,10 @@ def hijo3():
 @app.route("/login", methods = ['GET', 'POST'])
 def login():
 	database = shelve.open('database.db')
-	miembro = request.form['miembro']
+	miembro = str(request.form['miembro'])
         
-	if request.method == 'POST' and miembro in database and database[miembro]['Contraseña'] == request.form['pass'] :
-		session['miembro'] = request.form['miembro']
+	if request.method == 'POST' and miembro in database and database[miembro]['Contraseña'] == str(request.form['pass']) :
+		session['miembro'] = str(request.form['miembro'])
 		session['urls'] = []
 
 	database.close()
@@ -64,7 +64,7 @@ def logout():
 def reg():
 	if request.method == 'POST' :
 		database = shelve.open('database.db')
-		database[request.form['miembro']] = {'Nombre' : request.form['miembro'], 'Contraseña' : request.form['pass'], 'Telefono' : request.form['tel']}
+		database[request.form['miembro']] = {'Nombre' : str(request.form['miembro']), 'Contraseña' : str(request.form['pass']), 'Telefono' : str(request.form['tel'])}
 		database.close()
 	return render_template('registro.html')
 

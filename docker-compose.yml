@@ -1,15 +1,15 @@
 
-version: '3'
+version: '2'
 
 services:
 
-  dash_app:
+  practica3:
     container_name: practica3
     restart: always
     build: ./practica3
     ports:
       - "8000:8000"
-    command: gunicorn -w 1 -b :8000 practica3:server
+    command: gunicorn -w 1 -b :8000 practica3:app
 
 
   nginx:
@@ -17,6 +17,6 @@ services:
     restart: always
     build: ./nginx
     ports:
-      - "80:80"
+      - "5000:5000"
     depends_on:
-- practica3
+      - practica3
