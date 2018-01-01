@@ -9,7 +9,6 @@ RUN apt-get install -y python python-pip python-virtualenv nginx gunicorn superv
 
 RUN mkdir -p /deploy/practica3
 COPY practica3 /deploy/practica3
-RUN pip install Flask
 RUN pip install -r /deploy/practica3/requirements.txt
 
 
