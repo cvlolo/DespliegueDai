@@ -1,34 +1,53 @@
-FROM ubuntu:14.04
+
+############################################################
+# Dockerfile to build flask image
+# Based on Ubuntu 16.04
+############################################################
+
+# Set the base image to Ubuntu
+
+FROM laztoum/base
+
 MAINTAINER Manuel Casado
 
-ENV DEBIAN_FRONTEND noninteractive
+RUN mkdir /flaskApp \
+	&& cd flaskApp
 
-RUN apt-get update
-RUN apt-get install -y python python-pip python-virtualenv nginx gunicorn supervisor libpq-dev
-RUN pip install --upgrade pip 
+RUN apt-get update \
+	&& apt-get install -y python-pip \
+	gcc \
+	nginx \
+	supervisor \
+	&& rm -rf /var/lib/apt/lists/*
 
+COPY practica3/requirements.txt /flaskApp/
+RUN pip install -r /flaskApp/requirements.txt
 
-RUN mkdir -p /deploy/practica3
-COPY practica3 /deploy/practica3
-RUN pip install -r /deploy/practica3/requirements.txt
-
-
-RUN rm /etc/nginx/sites-enabled/default
-COPY flask.conf /etc/nginx/sites-available/
-RUN ln -s /etc/nginx/sites-available/flask.conf /etc/nginx/sites-enabled/flask.conf
-RUN echo "daemon off;" >> /etc/nginx/nginx.conf
+COPY flask.conf /etc/nginx/sites-available/default
 
 RUN mkdir -p /var/www/flask/static
 COPY /practica3/static /var/www/flask/static
 
+# Custom Supervisord config
+COPY supervisord.conf /etc/supervisor/conf.d/
+
+# Make NGINX run on the foreground
+RUN echo "daemon off;" >> /etc/nginx/nginx.conf
+
+COPY practica3/* /flaskApp/
+
+WORKDIR /flaskApp
+VOLUME /flaskApp
+
+# Expose ports
+EXPOSE 80  
+#EXPOSE 443
+
+# Set the default command to execute when creating a new container
+CMD ["supervisord", "-n"]
 
 
-RUN mkdir -p /var/log/supervisor
-COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-COPY gunicorn.conf /etc/supervisor/conf.d/gunicorn.conf
 
-
-CMD ["/usr/bin/supervisord"]
 
 
 
