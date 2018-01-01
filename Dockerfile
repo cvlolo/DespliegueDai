@@ -4,7 +4,7 @@ MAINTAINER Manuel Casado
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update
-RUN apt-get install -y python python-pip python-virtualenv nginx gunicorn supervisor libpq-dev
+RUN apt-get install -y python python-pip python-virtualenv nginx gunicorn supervisor libpq-dev Flask
 
 
 RUN mkdir -p /deploy/practica3
